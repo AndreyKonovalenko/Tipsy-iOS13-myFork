@@ -15,7 +15,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var zerPtcButton: UIButton!
     @IBOutlet weak var tenPtcButton: UIButton!
     @IBOutlet weak var twentyPtcButton: UIButton!
-    @IBOutlet weak var splitNumberLabel: UILabel!
+    
+    @IBOutlet weak var slipNumberLabel: UILabel!
     
     @IBAction func tipChanged(_ sender: UIButton) {
     }
@@ -25,10 +26,7 @@ class CalculatorViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+   
 
 
 }
