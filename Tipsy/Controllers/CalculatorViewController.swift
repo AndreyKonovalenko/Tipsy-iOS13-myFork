@@ -9,7 +9,7 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+    
     @IBOutlet weak var billTextField: UITextField!
     
     @IBOutlet weak var zerPtcButton: UIButton!
@@ -44,21 +44,26 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        print(sender.value)
         splitNumberLabel.text = String(format: "%.0f", sender.value)
     }
-    @IBAction func calculatePressed(_ sender: UIButton) {
-        let tipValue = calculationLocig.getTipValue(zero: zerPtcButton.isSelected.self, ten: tenPtcButton.isSelected.self, twenty: twentyPtcButton.isSelected.self)
-        print(tipValue)
-        let bill = calculationLocig.getBillTotal(billValue: billTextField.text ?? "0.0")
-        print(bill)
-        
-        
-
-    }
     
-   
-
-
+    @IBAction func calculatePressed(_ sender: UIButton) {
+        
+        let tip = calculationLocig.setTipValue(zero: zerPtcButton.isSelected.self, ten: tenPtcButton.isSelected.self, twenty: twentyPtcButton.isSelected.self)
+        let bill = calculationLocig.setBillTotal(billValue: billTextField.text ?? "0.0")
+        let splitNumber =  Int(splitNumberLabel.text!)!
+        calculationLocig.calculateTips(bill: bill, tip: tip, splitNumber: splitNumber)
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.result = calculationLocig.getSplitBill()
+            destinationVC.splitNumber = calculationLocig.getSplitNumber()
+            destinationVC.tipSize = calculationLocig.getTipValue()
+        }
+        
+    }
 }
-

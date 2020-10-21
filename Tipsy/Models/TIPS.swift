@@ -12,5 +12,5 @@ struct TIPS {
     let bill: Float
     let splitNumber: Int
     let tip: Float
-    let reuslt: String
+    let result: String
 }

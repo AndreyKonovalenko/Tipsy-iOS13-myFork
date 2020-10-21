@@ -203,7 +203,7 @@
                         <outlet property="tenPtcButton" destination="7y6-Kf-yF0" id="rbd-lW-Iha"/>
                         <outlet property="twentyPtcButton" destination="UtR-dU-EKt" id="2Js-dl-aw4"/>
                         <outlet property="zerPtcButton" destination="XzR-0E-Xf7" id="FWF-ri-zw4"/>
-                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="GoToResult" id="uA4-DB-a4L"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResult" id="uA4-DB-a4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

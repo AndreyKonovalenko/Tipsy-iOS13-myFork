@@ -11,12 +11,12 @@ import Foundation
 struct CalculatinoLogic {
     var tips: TIPS?
     
-    mutating func calculateTips(_ bill: Float, _ tip:  Float, _ splitNumber: Int )  {
+    mutating func calculateTips(bill: Float, tip:  Float, splitNumber: Int )  {
         let resultValue = (bill + bill * tip) / Float(splitNumber)
-        tips = TIPS(bill: bill, splitNumber: splitNumber, tip: tip, reuslt: String(format: "%.2f", resultValue))
+        tips = TIPS(bill: bill, splitNumber: splitNumber, tip: tip, result: String(format: "%.2f", resultValue))
     }
     
-    func getTipValue(zero: Bool, ten: Bool, twenty: Bool) -> Float {
+    func setTipValue(zero: Bool, ten: Bool, twenty: Bool) -> Float {
         var result: Float = 0.1
         if zero {
             result = 0.0
@@ -30,9 +30,23 @@ struct CalculatinoLogic {
         return result
     }
     
-    func getBillTotal(billValue: String) -> Float {
+    func setBillTotal(billValue: String) -> Float {
         guard let bill = Float(billValue) else { return 0.00 }
         return bill
+    }
+        
+    func getSplitBill() -> String {
+        return tips?.result ?? "0.00"
+    
+    }
+    
+    func getSplitNumber() -> String {
+        return "\(tips?.splitNumber ?? 2)"
+    }
+    
+    func getTipValue() -> String {
+        let tipSize = tips?.tip ?? 0.1 * 100
+        return "\(tipSize * 100)%"
     }
 }
 
