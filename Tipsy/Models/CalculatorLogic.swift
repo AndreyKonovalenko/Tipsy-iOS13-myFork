@@ -17,13 +17,22 @@ struct CalculatinoLogic {
     }
     
     func getTipValue(zero: Bool, ten: Bool, twenty: Bool) -> Float {
+        var result: Float = 0.1
         if zero {
-            return 0.0
-        } else if ten {
-            return 0.1
-        } else {
-            return 0.2
+            result = 0.0
         }
+        if ten {
+            result = 0.1
+        }
+        if twenty {
+            result = 0.2
+        }
+        return result
     }
     
+    func getBillTotal(billValue: String) -> Float {
+        guard let bill = Float(billValue) else { return 0.00 }
+        return bill
+    }
 }
+

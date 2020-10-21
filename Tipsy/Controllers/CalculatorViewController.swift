@@ -18,7 +18,7 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var splitNumberLabel: UILabel!
     
-    var calculationLocit = CalculatinoLogic();
+    var calculationLocig = CalculatinoLogic();
     
     @IBAction func tipChanged(_ sender: UIButton) {
         let tipValue = sender.currentTitle!
@@ -37,7 +37,10 @@ class CalculatorViewController: UIViewController {
             tenPtcButton.isSelected = false
         default:
             tenPtcButton.isSelected = true
+            zerPtcButton.isSelected = false
+            twentyPtcButton.isSelected = false
         }
+        billTextField.endEditing(true)
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -45,9 +48,13 @@ class CalculatorViewController: UIViewController {
         splitNumberLabel.text = String(format: "%.0f", sender.value)
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let tipValue = calculationLocit.getTipValue(zero: zerPtcButton.isSelected.self, ten: tenPtcButton.isSelected.self, twenty: twentyPtcButton.isSelected.self)
+        let tipValue = calculationLocig.getTipValue(zero: zerPtcButton.isSelected.self, ten: tenPtcButton.isSelected.self, twenty: twentyPtcButton.isSelected.self)
         print(tipValue)
-       // calculatinoLogic.calculateTips()
+        let bill = calculationLocig.getBillTotal(billValue: billTextField.text ?? "0.0")
+        print(bill)
+        
+        
+
     }
     
    
