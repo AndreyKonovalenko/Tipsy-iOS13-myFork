@@ -111,7 +111,7 @@
                                                         </constraints>
                                                         <color key="tintColor" red="0.0" green="0.59227246050000004" blue="0.347086966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
-                                                            <action selector="setpperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lWR-mM-bgB"/>
+                                                            <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qbw-Um-rzf"/>
                                                         </connections>
                                                     </stepper>
                                                 </subviews>
@@ -199,7 +199,7 @@
                     </view>
                     <connections>
                         <outlet property="billTextField" destination="wcN-ka-Q4F" id="C8y-9i-1Cu"/>
-                        <outlet property="slipNumberLabel" destination="bSy-Yc-886" id="FNg-RC-AAc"/>
+                        <outlet property="splitNumberLabel" destination="bSy-Yc-886" id="FNg-RC-AAc"/>
                         <outlet property="tenPtcButton" destination="7y6-Kf-yF0" id="rbd-lW-Iha"/>
                         <outlet property="twentyPtcButton" destination="UtR-dU-EKt" id="2Js-dl-aw4"/>
                         <outlet property="zerPtcButton" destination="XzR-0E-Xf7" id="FWF-ri-zw4"/>

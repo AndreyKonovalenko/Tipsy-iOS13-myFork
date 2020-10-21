@@ -16,4 +16,14 @@ struct CalculatinoLogic {
         tips = TIPS(bill: bill, splitNumber: splitNumber, tip: tip, reuslt: String(format: "%.2f", resultValue))
     }
     
+    func getTipValue(zero: Bool, ten: Bool, twenty: Bool) -> Float {
+        if zero {
+            return 0.0
+        } else if ten {
+            return 0.1
+        } else {
+            return 0.2
+        }
+    }
+    
 }
